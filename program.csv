@@ -126,10 +126,10 @@ id,name,body,place,image
 1448,A4談話室に来よう！,万国の人民よ!A4民たれ！,A4談話室,media/images/A4談話室に来よう！.jpg
 1449,バークマ,バークマ,軟鉄庵,media/images/B209野坂企画広告バークマ.jpg
 1450,生ハム原木,軟鉄に生ハムの原木がある。,軟鉄庵,media/images/B209野坂企画広告生ハム.jpg
-1451,No More アルコールハラスメント,アルハラしたら10年以下の懲役・1,000万円以下の罰金のどちらかもしくは両方だ！気をつけろ！,上映企画に於いて,media/images/Nomoreアルコールハラスメント.jpg
+1451,No More アルコールハラスメント,"アルハラしたら10年以下の懲役・1,000万円以下の罰金のどちらかもしくは両方だ！気をつけろ！",上映企画に於いて,media/images/Nomoreアルコールハラスメント.jpg
 1452,QWOPトライアスロン,ハンドシミュレーターの銃でスタート！走れ！,談話室？,media/images/QWOPトライアスロン.jpg
-1453,TOEIC900・TOEFL600,Feel free to join us for studying English of any genre-TOEIC, TOEFL, Eiken, weekly assignments, research papers, dissertations etc.,食堂,media/images/toeic900_TOEFL600.jpg
-1454,TOEIC団体受験★900突破チャレンジ,Feel free to join us for studying English of any genre-TOEIC, TOEFL, Eiken, weekly assignments, research papers, dissertations etc.,食堂,media/images/TOEIC団体受験.jpg
+1453,TOEIC900・TOEFL600,"Feel free to join us for studying English of any genre-TOEIC, TOEFL, Eiken, weekly assignments, research papers, dissertations etc.",食堂,media/images/toeic900_TOEFL600.jpg
+1454,TOEIC団体受験★900突破チャレンジ,"Feel free to join us for studying English of any genre-TOEIC, TOEFL, Eiken, weekly assignments, research papers, dissertations etc.",食堂,media/images/TOEIC団体受験.jpg
 1455,あたたまり屋,こたつとお酒とあったかごはんとあったか交流,ロビー,media/images/あたたまりや.jpg
 1456,KUMANO ADVENT CALENDER,寮に関わりのある方々に思い思いの文章を書き連ねていただきます,ネット上,media/images/アドベントカレンダー.jpg
 1457,くまけん・こいけん,くまけん、こいけん,食堂,media/images/くま検・こい検.jpg
@@ -264,4 +264,3 @@ id,name,body,place,image
 1321,至近距離双眼鏡物当てバトル,遠くの物を見ることだけが双眼鏡の使い方ですか？偏見ですよ？鏡権侵害ですよ？たまには近くの物を見るために使ってあげましょう？,食堂,media/images/16_00~至近距離双眼鏡物あてバトル.jpg
 1322,少女☆歌劇　レヴュースタァライト上映会,みんなをスタァライト　しちゃいます！！,食堂or食北　（上映会ができる場所）,media/images/17_00~レヴュースタァライト上映会.jpg
 1323,サウナを作る,サウナを作ってみんなで汗を流そう！お風呂と合わせていかがですか？,中庭,media/images/19_00~サウナをつくる.jpg
-(265 rows)
