@@ -24,7 +24,7 @@ url_hash = {}
 i = 0
 File.open(output_file_path, "w+") do |f|
   f.write("\nlistOf(\n")
-  csv_data = CSV.read(program_csv_path, encoding: 'utf-8', headers: true)
+  csv_data = CSV.read(program_csv_path, encoding: 'BOM|utf-8', headers: true)
   csv_data.each_with_index do |data, id|
 
     if (data['type'] == "0") then
@@ -36,12 +36,12 @@ File.open(output_file_path, "w+") do |f|
         tmp_str = ""
       end
       if tmp_str == "" then
-        tmp_str = "listOf(\"#{data['id']}\",\"#{data['type']}\",\"#{data['title']}\",\"#{data['details']}\",\"#{data['start_day'][0..1]}/#{data['start_day'][2..3]} #{data['start_at']}\",\"#{data['end_day'][0..1]}/#{data['end_day'][2..3]} #{data['end_at']}\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
+        tmp_str = "listOf(\"#{data['uid']}\",\"#{data['type']}\",\"#{data['name']}\",\"#{data['body']}\",\"#{data['start_day'][0..1]}/#{data['start_day'][2..3]} #{data['start_at']}\",\"#{data['end_day'][0..1]}/#{data['end_day'][2..3]} #{data['end_at']}\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
       else
-        tmp_str = "#{tmp_str},\nlistOf(\"#{data['id']}\",\"#{data['type']}\",\"#{data['title']}\",\"#{data['details']}\",\"#{data['start_day'][0..1]}/#{data['start_day'][2..3]} #{data['start_at']}\",\"#{data['end_day'][0..1]}/#{data['end_day'][2..3]} #{data['end_at']}\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
+        tmp_str = "#{tmp_str},\nlistOf(\"#{data['uid']}\",\"#{data['type']}\",\"#{data['name']}\",\"#{data['body']}\",\"#{data['start_day'][0..1]}/#{data['start_day'][2..3]} #{data['start_at']}\",\"#{data['end_day'][0..1]}/#{data['end_day'][2..3]} #{data['end_at']}\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
       end
       tmp_str_write_f = true
-      url_hash["#{data['path']}"] = "https://kumano-dormitory.github.io/ryosai2020/events/#{data['id']}.html"
+      url_hash["#{data['path']}"] = "https://kumano-dormitory.github.io/ryosai2020/events/#{data['uid']}.html"
       i = i + 1
     elsif (data['type'] == "1") then
       if tmp_str_write_f then
@@ -49,19 +49,19 @@ File.open(output_file_path, "w+") do |f|
           f.write(tmp_str)
       end
       if tmp_permanent == ""
-        tmp_permanent = "listOf(\"#{data['id']}\",\"#{data['type']}\",\"#{data['title']}\",\"#{data['details']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
+        tmp_permanent = "listOf(\"#{data['uid']}\",\"#{data['type']}\",\"#{data['name']}\",\"#{data['body']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
       else
-        tmp_permanent = "#{tmp_permanent},\nlistOf(\"#{data['id']}\",\"#{data['type']}\",\"#{data['title']}\",\"#{data['details']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
+        tmp_permanent = "#{tmp_permanent},\nlistOf(\"#{data['uid']}\",\"#{data['type']}\",\"#{data['name']}\",\"#{data['body']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
       end
-      url_hash["#{data['path']}"] = "https://kumano-dormitory.github.io/ryosai2020/events/#{data['id']}.html"
+      url_hash["#{data['path']}"] = "https://kumano-dormitory.github.io/ryosai2020/events/#{data['uid']}.html"
       i = i + 1
     elsif (data['type'] == "2") then
       if tmp_gerira == ""
-        tmp_gerira = "listOf(\"#{data['id']}\",\"#{data['type']}\",\"#{data['title']}\",\"#{data['details']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
+        tmp_gerira = "listOf(\"#{data['uid']}\",\"#{data['type']}\",\"#{data['name']}\",\"#{data['body']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
       else
-        tmp_gerira = "#{tmp_gerira},\nlistOf(\"#{data['id']}\",\"#{data['type']}\",\"#{data['title']}\",\"#{data['details']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
+        tmp_gerira = "#{tmp_gerira},\nlistOf(\"#{data['uid']}\",\"#{data['type']}\",\"#{data['name']}\",\"#{data['body']}\",\"\",\"\",\"#{data['place']}\",\"#{data['path']}\",\"#{data['order']}\")"
       end
-      url_hash["#{data['path']}"] = "https://kumano-dormitory.github.io/ryosai2020/events/#{data['id']}.html"
+      url_hash["#{data['path']}"] = "https://kumano-dormitory.github.io/ryosai2020/events/#{data['uid']}.html"
       i = i + 1
     end
 
@@ -70,8 +70,10 @@ File.open(output_file_path, "w+") do |f|
       path_hash[data['path']] = "    \"#{data['path']}\" -> R.drawable.#{data['path']}\n"
     end
     # viewIdの集合に追加する
-    id_hash[data['id']] = "       R.id.#{data['id']} -> \"#{data['id']}\"\n"
+    id_hash[data['uid']] = "       R.id.#{data['uid']} -> \"#{data['uid']}\"\n"
   end
+
+
   f.write("\n),\nlistOf(\n")
   f.write(tmp_permanent)
   f.write("\n),\nlistOf(\n")
